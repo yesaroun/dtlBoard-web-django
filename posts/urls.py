@@ -2,10 +2,12 @@ from django.urls import path
 from django.views.generic.detail import DetailView
 from .views import *
 from .models import Post
+from .views import index
 
 app_name = "Post"
 
 urlpatterns = [
+    path("", index),
     path("list/", post_list, name="post_list"),
     path(
         "detail/<int:pk>/",

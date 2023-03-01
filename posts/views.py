@@ -4,6 +4,10 @@ from django.shortcuts import redirect
 from .models import Post
 
 
+def index(request):
+    return render(request, "posts/index.html")
+
+
 def post_list(request):
     posts = Post.objects.all()
     return render(request, "posts/list.html", {"posts": posts})
