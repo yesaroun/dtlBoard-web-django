@@ -30,6 +30,8 @@
       {% if user.is_authenticated %}
         <a href="{% url 'logout' %}" class="contact">Logout</a>
       {% else %}
+        <a href="{% url 'register' %}" class="contact">Signup</a>
+        <span class="contact" style="padding: 10px">  </span>
         <a href="{% url 'login' %}" class="contact">Login</a>
       {% endif %}
 

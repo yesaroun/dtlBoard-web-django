@@ -1,5 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_view
+from .views import register
 
 
 urlpatterns = [
@@ -9,4 +10,5 @@ urlpatterns = [
         auth_view.LogoutView.as_view(template_name="registration/logged_out.html"),
         name="logout",
     ),
+    path("register/", register, name="register"),
 ]

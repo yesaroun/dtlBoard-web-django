@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}- Registration{% endblock %}
+
+{% block content %}
+
+<section class="introduce">
+<div>
+  <div>
+    <div>Please enter your account informations</div>
+    <form action="" method="post">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <input type="submit" value="Register">
+    </form>
+  </div>
+</div>
+</section>
+
+{% endblock %}
