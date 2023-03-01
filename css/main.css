@@ -260,7 +260,7 @@ nav.gnb.on {
 /* .text => 전체 텍스트 공통 부분 */
 .text .title {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: 1px; /* 자간 간격 */
   text-transform: uppercase; /* 대문자 변환 */
   font-weight: bold;
@@ -303,12 +303,16 @@ section.introduce .inner {
 }
 section.introduce .img {
   width: 48%;
+  height: 80vh;
   float: left;
   border-radius: 10px;
   overflow: hidden;
 }
 section.introduce .img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
 }
 section.introduce .text {
   width: 45%;
@@ -317,7 +321,7 @@ section.introduce .text {
 /* section.introduce -모션 */
 section.introduce .img.motion {
   animation-name: introduce;
-  animation-duration: 1s;
+  animation-duration: 0.8s;
 }
 @keyframes introduce {
   0% {
@@ -336,8 +340,17 @@ section.about {
   background: #f2f0eb;
   padding: 100px 0;
 }
+section.about .inner {
+  margin: 0 100px;
+}
+section.about .inner .text div {
+  margin: 40px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
 section.about .inner .text p {
-  font-size: 45px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 /* section.approach */
@@ -378,7 +391,7 @@ section.approach .inner .fix {
   right: 0;
 }
 
-/* SECTION.APPROACH 모션 */
+/* section.approach 모션 */
 
 section.approach .inner .fix .text {
   position: absolute; /* 부모요소 기준 배치 */
@@ -625,13 +638,7 @@ footer .inner .sns li {
     opacity: 0;
   }
 }
-/* visual 텍스트 애니메이션 */
-.visual .title.motion .char {
-  animation: textAni 2s both;
-  animation-delay: calc(
-    0.08s * var(--char-index)
-  ); /* 글자 하나씩 순서대로 나타나도록 적용 */
-}
+
 /* .text 공동 텍스트 애니메이션 */
 .text.motion .word {
   animation: textAni 0.8s both;
@@ -736,7 +743,7 @@ footer .inner .sns li {
     padding: 100px 0 20%;
     margin-bottom: 15%;
   }
-  section.secotrs .list {
+  section.sectors .list {
     bottom: -18%;
   }
   section.journal {
