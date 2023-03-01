@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}- Logout{% endblock %}
+
+{% block content %}
+
+  <section class="introduce">
+    <div>
+      <div>
+        You have been successfully logged out.
+      </div>
+      <a href="{% url 'login' %}">Click to Login</a>
+    </div>
+  </section>
+
+{% endblock %}
