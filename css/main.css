@@ -338,19 +338,35 @@ section.introduce .img.motion {
 /* section.about */
 section.about {
   background: #f2f0eb;
-  padding: 100px 0;
+  padding: 100px;
 }
 section.about .inner {
-  margin: 0 100px;
+  display: flex;
+  overflow: hidden;
 }
-section.about .inner .text div {
+section.about .text {
+  width: 45%;
+}
+section.about .text div {
   margin: 40px 0;
   font-size: 18px;
   font-weight: 500;
 }
-section.about .inner .text p {
+section.about .text p {
   font-size: 24px;
   margin-bottom: 20px;
+}
+section.about .img {
+  width: 48%;
+  height: 58vh;
+  border-radius: 10px;
+  overflow: hidden;
+}
+section.about .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
 }
 
 /* section.synopsis  */
@@ -554,16 +570,16 @@ section.journal .list li a .img img {
   transform: translate(-50%, -50%);
 }
 section.journal .list li a h3 {
-  font-size: 15px;
+  font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin: 30px 0;
 }
 section.journal .list li a p {
+  margin: 30px 0;
   font-size: 16px;
   line-height: 1.4;
   overflow: hidden;
-  /* css 모든 브라우저에 호환되는 것X 여기선 goole, safari에 적용되는 -webkit- 이용 */
+  /* css 모든 브라우저에 호환되는 것X 여기선 google, safari에 적용되는 -webkit- 이용 */
   /* display:box; block에 float 대신 사용. 수직,수평 배치 or 역순 배열,임의로 배치순서 바꿔 줄 수도 있음. */
   display: -webkit-box; /* 상자 가로 정렬 */
   -webkit-line-clamp: 3; /* ... 말 줄임 생략 표시 3번째 줄에 표시되도록 */
@@ -604,7 +620,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 200px;
-  background: #213135;
+  background: #5d4037;
   color: #fff;
   padding: 75px 0;
   box-sizing: border-box; /* padding 값 줄 때 전체영역 box-sizing: border-box주기 */
