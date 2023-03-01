@@ -37,6 +37,38 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-disqus"
+version = "0.5"
+description = "Export comments and integrate DISQUS into your Django website"
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "django-disqus-0.5.tar.gz", hash = "sha256:98b92ce05caea193cd6f797238fda1e918f31e0c77c533706372d7dbd0e9bb5e"},
+]
+
+[package.dependencies]
+Django = ">=1.4"
+mock = ">=1.0.1"
+
+[[package]]
+name = "mock"
+version = "5.0.1"
+description = "Rolling backport of unittest.mock for all Pythons"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "mock-5.0.1-py3-none-any.whl", hash = "sha256:c41cfb1e99ba5d341fbcc5308836e7d7c9786d302f995b2c271ce2144dece9eb"},
+    {file = "mock-5.0.1.tar.gz", hash = "sha256:e3ea505c03babf7977fd21674a69ad328053d414f05e6433c30d8fa14a534a6b"},
+]
+
+[package.extras]
+build = ["blurb", "twine", "wheel"]
+docs = ["sphinx"]
+test = ["pytest", "pytest-cov"]
+
+[[package]]
 name = "pillow"
 version = "9.4.0"
 description = "Python Imaging Library (Fork)"
@@ -114,6 +146,18 @@ docs = ["furo", "olefile", "sphinx (>=2.4)", "sphinx-copybutton", "sphinx-inline
 tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "packaging", "pyroma", "pytest", "pytest-cov", "pytest-timeout"]
 
 [[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+files = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
+]
+
+[[package]]
 name = "sqlparse"
 version = "0.4.3"
 description = "A non-validating SQL parser."
@@ -140,4 +184,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "b11025239dfa1a4fc3183ca6b960232c71dcd48cfb3932893d8cad4ac4fad10e"
+content-hash = "2d4e6fbf6fdd42e49dce1790f2ef0fa88737cb314090728ffc419451ad6a05c5"
