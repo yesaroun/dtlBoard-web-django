@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}- List{% endblock %}
+
+{% block content %}
+  <section class="introduce">
+    {% for post in posts %}
+      <div class="row">
+        <div class="panel panel-default">
+          <h1>{{ post.title }}</h1>
+          <p><img src="{{ post.photo.url }}" style="width: 100%;" alt=""></p>
+          <button type="button" class="btn btn-xs btn-info">
+            {{ post.author.username }}
+          </button>
+          <p>{{ post.text|linebreaksbr }}</p>
+          <p class="text-right">
+            <a href="{% url 'post:post_detail' pk=post.id %}" class="btn btn-xs btn-success">댓글 달기</a>
+          </p>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

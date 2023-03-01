@@ -9,7 +9,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=1.0"
   />
-  <title>헤어질 결심</title>
+  <title>헤어질 결심 {% block title %} {% endblock %}</title>
   <link rel="stylesheet" href="{% static 'posts/css/main.css' %}"/>
   <!-- scirpt -->
   <script src="{% static 'posts/js/jquery-3.3.1.min.js' %}"></script>
@@ -27,7 +27,12 @@
         <span class="b"></span>
       </a>
       <a href="#" class="logo">헤어질 결심</a>
-      <a href="#" class="contact">contact</a>
+      {% if user.is_authenticated %}
+        <a href="#" class="contact">Logout</a>
+      {% else %}
+        <a href="#" class="contact">Login</a>
+      {% endif %}
+
     </div>
     <nav class="gnb">
       <ul>

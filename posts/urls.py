@@ -4,7 +4,7 @@ from .views import *
 from .models import Post
 from .views import index
 
-app_name = "Post"
+app_name = "post"
 
 urlpatterns = [
     path("", index),
