@@ -22,14 +22,14 @@ class PostUploadView(CreateView):
         form.instance.author_id = self.request.user.id
         if form.is_valid():
             form.instance.save()
-            return redirect("posts/list.html")
+            return redirect("/list")
         else:
             return self.render_to_response({"form": form})
 
 
 class PostDeleteView(DeleteView):
     model = Post
-    success_url = "posts/list.html"
+    success_url = "/list"
     template_name = "posts/delete.html"
 
 

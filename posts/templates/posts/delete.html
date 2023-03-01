@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}- Delete{% endblock %}
+
+{% block content %}
+
+  <section class="introduce">
+    <div class="row">
+      <div>
+        <div>
+          Do you want to delete {{ object }}?
+        </div>
+        <form action="" method="post">
+          {{ form.as_p }}
+          {% csrf_token %}
+          <input type="submit" value="Confirm">
+        </form>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

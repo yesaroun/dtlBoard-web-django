@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+  {{ object.text|truncatechars:10 }}
+{% endblock %}
+
+{% block content %}
+
+  <section class="introduce">
+    <div class="row">
+      <div>
+        <p><img src="{{ object.photo.url }}" style="width: 100%;" alt=""></p>
+        <button type="button">
+          {{ object.author.username }}
+        </button>
+        <p>{{ object.text|linebreaksbr }}</p>
+
+        <a href="{% url 'post:post_delete' pk=object.id %}">Delete</a>
+        <a href="{% url 'post:post_update' pk=object.id %}">Update</a>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
