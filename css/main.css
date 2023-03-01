@@ -116,7 +116,7 @@ header {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 
 header .inner {
@@ -128,7 +128,7 @@ header .inner .logo {
   display: inline-block; /* a 태그 = inline 요소, inline속성 유지하면서 block 속성(크기지정 가능) */
   font-size: 25px;
   letter-spacing: 1px; /* 자간 */
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 
 header .inner .gnbBtn {
@@ -138,7 +138,7 @@ header .inner .gnbBtn {
   height: 12px;
   position: relative; /* 자기 자신 기준 배치 */
   margin-top: 15px;
-  transition: all 0.4s;
+  transition: all 0.3s;
   z-index: 200;
 }
 
@@ -160,22 +160,22 @@ header .inner .contact {
   display: block;
   float: right; /* 오른쪽에 위치 시킴 */
   margin-top: 10px;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 
 /* HEADER 모션 */
 header.on {
   padding: 20px 0 18px;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 header.on .logo {
   font-size: 22px;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 header.on .gnbBtn,
 header.on .contact {
   margin-top: 4px;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 /* gnb */
 nav.gnb {
@@ -216,7 +216,7 @@ nav.gnb ul li a span {
 /* header.on 붙을 때 gnb 디자인 */
 header.on nav.gnb {
   width: 300px;
-  transition: all 0.4s;
+  transition: all 0.3s;
 }
 header.on nav.gnb ul {
   width: 50%;
@@ -318,7 +318,7 @@ section.introduce .text {
   width: 45%;
   float: right;
 }
-/* section.introduce -모션 */
+/* section.introduce 모션 */
 section.introduce .img.motion {
   animation-name: introduce;
   animation-duration: 0.8s;
@@ -326,12 +326,12 @@ section.introduce .img.motion {
 @keyframes introduce {
   0% {
     opacity: 0;
-    transform: translateX(-1000px);
+    transform: translateX(-10px);
   }
-  30% {
+  10% {
     /* 0%~30%까지 위치 유지*/
     opacity: 0;
-    transform: translateX(-1000px);
+    transform: translateX(-10px);
   }
 }
 
@@ -462,7 +462,7 @@ section.sectors .list li a {
 }
 section.sectors .list li a img {
   width: 100%;
-  transition: all 0.4s; /* hover 나갈 때도 부드럽게 표현되기 위함  */
+  transition: all 0.3s; /* hover 나갈 때도 부드럽게 표현되기 위함  */
 }
 section.sectors .list li a h3 {
   position: absolute; /* 부모요소 기준 배치 */
@@ -474,7 +474,7 @@ section.sectors .list li a h3 {
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px; /* 자간 간격 */
-  transition: all 0.4s; /* hover 나갈 때도 부드럽게 표현되기 위함  */
+  transition: all 0.3s; /* hover 나갈 때도 부드럽게 표현되기 위함  */
 }
 /* section.sectors - 모션 */
 section.sectors .list li a:hover img,
