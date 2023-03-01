@@ -28,9 +28,9 @@
       </a>
       <a href="#" class="logo">헤어질 결심</a>
       {% if user.is_authenticated %}
-        <a href="#" class="contact">Logout</a>
+        <a href="{% url 'logout' %}" class="contact">Logout</a>
       {% else %}
-        <a href="#" class="contact">Login</a>
+        <a href="{% url 'login' %}" class="contact">Login</a>
       {% endif %}
 
     </div>
