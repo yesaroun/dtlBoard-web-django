@@ -1,0 +1,50 @@
+section.about {
+  background: #f2f0eb;
+  padding: 100px;
+  .inner {
+    display: flex;
+    overflow: hidden;
+  }
+  .text {
+    width: 45%;
+    div {
+      margin: 40px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+    p {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  .img {
+    width: 48%;
+    height: 58vh;
+    border-radius: 10px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 0;
+    }
+  }
+}
+
+/* 반응형 웸 */
+
+@media screen and (max-width: 1024px) {
+  section.about .inner .text p,
+  .text p {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section.about {
+    padding: 80px 0;
+    .inner .text p {
+      font-size: 22px;
+    }
+  }
+}

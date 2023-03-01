@@ -1,0 +1,101 @@
+section.sectors {
+  background: #f2f0eb;
+  padding: 100px 0 230px;
+  position: relative;
+  margin-bottom: 260px;
+  .list {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 1400px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -160px;
+    li {
+      width: 31%;
+      border-radius: 10px;
+      overflow: hidden;
+      a {
+        display: block;
+        position: relative; /* 부모요소 기준 배치 */
+        img {
+          width: 100%;
+          transition: all 0.3s; /* hover 나갈 때도 부드럽게 표현되기 위함  */
+        }
+        h3 {
+          position: absolute; /* 부모요소 기준 배치 */
+          left: 50%;
+          top: 50%;
+          color: #fff;
+          transform: translate(-50%, -50%);
+          font-size: 25px;
+          font-family: "Montserrat", sans-serif;
+          text-transform: uppercase;
+          letter-spacing: 1px; /* 자간 간격 */
+          transition: all 0.3s; /* hover 나갈 때도 부드럽게 표현되기 위함  */
+        }
+        &:hover img, &:focus img {
+          transform: scale(1.2);
+          transition: all 1s;
+        }
+        &:hover h3, &:focus h3 {
+          letter-spacing: 4px;
+          transition: all 0.5s;
+        }
+      }
+    }
+    &.motion li {
+      animation-name: sectors;
+      animation-duration: 1s;
+      &:nth-child(2) {
+        animation-duration: 1.15s;
+      }
+      &:nth-child(3) {
+        animation-duration: 1.3s;
+      }
+    }
+  }
+  @keyframes sectors {
+    0% {
+      opacity: 0;
+      transform: translateX(1000px);
+    }
+    30% {
+      opacity: 0;
+      transform: translateX(1000px);
+    } /* 100%일때는 따로 지정하지 않아도 알아서 자기 자리로 옴 */
+  } 
+}
+
+/* 반응형 웹 */
+
+@media screen and (max-width: 1400px) {
+  section.sectors .list {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  section.sectors {
+    padding: 100px 0 20%;
+    margin-bottom: 15%;
+    .list {
+      bottom: -18%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section.sectors {
+    padding: 80px 0 85%;
+    margin-bottom: 120%;
+    .list {
+      flex-wrap: wrap;
+      bottom: -82%;
+      li {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

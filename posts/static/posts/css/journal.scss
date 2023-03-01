@@ -1,0 +1,134 @@
+section.journal {
+  background: #f2f0eb;
+  padding: 350px 0 200px;
+  margin-top: -250px; /* 위의 section img와 겹쳐지게 올림 */
+  font-family: "Montserrat", sans-serif;
+  h2 {
+    font-size: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  .list {
+    display: flex; /* 가로축으로 나란히 정렬 */
+    justify-content: space-between; /* 가로축 균등하게 나눠서 배치 */
+    li {
+      width: 330px;
+      a {
+        display: block;
+        .img {
+          border-radius: 10px;
+          overflow: hidden; /* 넘치는 부분 감싸 */
+          height: 330px;
+          position: relative;
+          img {
+            height: 100%; /* 높이 img 클래스 가득차도록 */
+            width: auto; /* 높이 기준으로 잡았기 때문에 auto로 알아서 맞추도록
+           */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        h3 {
+          font-size: 12px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        p {
+          margin: 30px 0;
+          font-size: 16px;
+          line-height: 1.4;
+          overflow: hidden;
+          /* css 모든 브라우저에 호환되는 것X 여기선 google, safari에 적용되는 -webkit- 이용 */
+          /* display:box; block에 float 대신 사용. 수직,수평 배치 or 역순 배열,임의로 배치순서 바꿔 줄 수도 있음. */
+          display: -webkit-box; /* 상자 가로 정렬 */
+          -webkit-line-clamp: 3; /* ... 말 줄임 생략 표시 3번째 줄에 표시되도록 */
+          -webkit-box-orient: vertical; /* 박스 수직 방향 배치 */
+          text-align: justify; /* 이 영역안에서 text 양쪽정렬 */
+        }
+      }
+    }
+    &.motion {
+      li {
+        animation-name: journal;
+        animation-duration: 0.5s;
+      }
+      &:nth-child(2) {
+        animation-duration: 0.6s;
+      }
+      &:nth-child(3) {
+        animation-duration: 0.7s;
+      }
+      &:nth-child(4) {
+        animation-duration: 0.8s;
+      }
+    }
+  }
+}
+@keyframes journal {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+/* 반응형 웹 */
+
+@media screen and (max-width: 1400px) {
+  section.journal .list li {
+    width: 220px;
+    a .img {
+      height: 220px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  section.journal {
+    padding: 25% 0 100px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.journal {
+    padding: 30% 0 100px;
+    .list {
+      flex-wrap: wrap;
+      li {
+        width: 48.5%;
+        margin-bottom: 20px;
+        a .img {
+          height: auto;
+          img {
+            width: 100%;
+            height: auto;
+            position: static;
+            transform: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section.journal {
+    padding: 60% 0 80px;
+    h2 {
+      font-size: 25px;
+    }
+    .list li {
+      width: 100%;
+      &:nth-child(2) ~ * {
+        display: none;
+      }
+    }
+  }
+}

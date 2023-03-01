@@ -1,0 +1,6 @@
+@charset "UTF-8";
+header { width: 100%; position: fixed; top: 0; /* position 지정시 위치 지정도 같이! 여기선 top/left:0 */ left: 0; z-index: 100; background: #e0d3ca; padding: 40px 0 25px; /* 위 좌우 아래 */ color: #333; font-family: "Montserrat", sans-serif; font-weight: bold; text-align: center; text-transform: uppercase; transition: all 0.3s; }
+
+header .inner { width: 90%; margin: 0 auto; /* 가운데로 오도록 위아래: 0, 좌우: auto */ background-color: red; }
+
+/*# sourceMappingURL=main2.css.map */

@@ -1,77 +1,76 @@
 {% load static %}
+{% load sass_tags %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, minimum-scale=0, maximum-scale=1.0"
-  />
-  <title>헤어질 결심 {% block title %} {% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'posts/css/main.css' %}"/>
-  <!-- scirpt -->
-  <script src="{% static 'posts/js/jquery-3.3.1.min.js' %}"></script>
-  <script src="{% static 'posts/js/script_main.js' %}"></script>
-  <script src="{% static 'posts/js/scrolla.jquery.min.js' %}"></script>
-  <script src="{% static 'posts/js/splitting.min.js' %}"></script>
-</head>
-<body>
-<div class="wrap">
-  <!-- header -->
-  <header>
-    <div class="inner">
-      <a href="#" class="gnbBtn">
-        <span class="a"></span>
-        <span class="b"></span>
-      </a>
-      <a href="#" class="logo">헤어질 결심</a>
-      {% if user.is_authenticated %}
-        <a href="{% url 'logout' %}" class="contact">Logout</a>
-      {% else %}
-        <a href="{% url 'register' %}" class="contact">Signup</a>
-        <span class="contact" style="padding: 10px">  </span>
-        <a href="{% url 'login' %}" class="contact">Login</a>
-      {% endif %}
+    />
+    <title>헤어질 결심 {% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% sass_src 'posts/css/main1.scss' %}" />
+    <!-- script -->
+    <script src="{% static 'posts/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'posts/js/script_main.js' %}"></script>
+    <script src="{% static 'posts/js/scrolla.jquery.min.js' %}"></script>
+    <script src="{% static 'posts/js/splitting.min.js' %}"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- header -->
+      <header>
+        <div class="inner">
+          <a href="#" class="gnbBtn">
+            <span class="a"></span>
+            <span class="b"></span>
+          </a>
+          <a href="#" class="logo">헤어질 결심</a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'logout' %}" class="contact">Logout</a>
+          {% else %}
+          <a href="{% url 'register' %}" class="contact">Signup</a>
+          <span class="contact" style="padding: 10px"> </span>
+          <a href="{% url 'login' %}" class="contact">Login</a>
+          {% endif %}
+        </div>
+        <nav class="gnb">
+          <ul>
+            <li>
+              <a href="#">CREW <span>Made</span></a>
+            </li>
+            <li>
+              <a href="#">CREW <span>Ready</span></a>
+            </li>
+            <li>
+              <a href="#">CREW <span>Design</span></a>
+            </li>
+            <li>
+              <a href="#">CREW <span>Source</span></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
 
+      {% block content %} {% endblock %}
+
+      <!-- footer -->
+      <footer>
+        <div class="inner">
+          <h1 class="footerLogo">à</h1>
+          <ul class="contact">
+            <li>Carrer del Jardi Botànic 4, Palma De Mallorca, 07012</li>
+            <li>+34 123 456 789 | abcd.com</li>
+          </ul>
+          <ul class="sns">
+            <li><a href="#">INSTAGRAM</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+            <li><a href="#">LINKEDIN</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
-    <nav class="gnb">
-      <ul>
-        <li>
-          <a href="#">CREW <span>Made</span></a>
-        </li>
-        <li>
-          <a href="#">CREW <span>Ready</span></a>
-        </li>
-        <li>
-          <a href="#">CREW <span>Design</span></a>
-        </li>
-        <li>
-          <a href="#">CREW <span>Source</span></a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  {% block content %}
-  {% endblock %}
-
-  <!-- footer -->
-  <footer>
-    <div class="inner">
-      <h1 class="footerLogo">à</h1>
-      <ul class="contact">
-        <li>Carrer del Jardi Botànic 4, Palma De Mallorca, 07012</li>
-        <li>+34 123 456 789 | abcd.com</li>
-      </ul>
-      <ul class="sns">
-        <li><a href="#">INSTAGRAM</a></li>
-        <li><a href="#">FACEBOOK</a></li>
-        <li><a href="#">LINKEDIN</a></li>
-      </ul>
-    </div>
-  </footer>
-</div>
-</body>
+  </body>
 </html>

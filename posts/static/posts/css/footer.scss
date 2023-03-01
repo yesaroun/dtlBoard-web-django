@@ -1,0 +1,76 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: #5d4037;
+  color: #fff;
+  padding: 75px 0;
+  box-sizing: border-box; /* padding 값 줄 때 전체영역 box-sizing: border-box주기 */
+  z-index: -1;
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat", sans-serif;
+    .footerLogo {
+      font-size: 50px;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+    .contact {
+      width: 30%;
+      line-height: 1.4;
+      margin-top: 10px;
+    }
+    .sns {
+      display: flex;
+      margin-top: 20px;
+      li {
+        margin: 0 40px;
+        font-weight: bold;
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+/* 반응형 웹 */
+@media screen and (max-width: 1024px) {
+  footer {
+    height: 330px;
+    .inner {
+      flex-wrap: wrap;
+      .footerLogo {
+        width: 100%;
+      }
+      .contact {
+        width: 100%;
+        margin: 20px 0;
+      }
+      .sns {
+        width: 100%;
+        justify-content: space-between;
+        li {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    height: 280px;
+    padding: 50px 0;
+    .inner {
+      .footerLogo {
+        font-size: 35px;
+        text-align: center;
+      }
+      .sns li {
+        font-size: 13px;
+      }
+    } 
+  }
+}

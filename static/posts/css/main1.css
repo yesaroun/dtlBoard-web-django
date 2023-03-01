@@ -1,0 +1,267 @@
+@charset "UTF-8";
+/* 인코딩시 한글 깨지지 않도록 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Nanum+Myeongjo&display=swap");
+/* header */
+header { width: 100%; position: fixed; top: 0; /* position 지정시 위치 지정도 같이! 여기선 top/left:0 */ left: 0; z-index: 100; background: #e0d3ca; color: #333; transition: all 0.3s; padding-top: 40px; padding-bottom: 25px; font-family: "Montserrat", sans-serif; font-weight: bold; text-align: center; text-transform: uppercase; }
+
+header .inner { width: 90%; margin: 0 auto; /* 가운데로 오도록 위아래: 0, 좌우: auto */ }
+
+header .inner .logo { display: inline-block; /* a태그 = inline 요소, inline속성 유지하면서 block 속성(크기지정 가능) */ font-size: 25px; letter-spacing: 1px; /* 자간 */ transition: all 0.3s; }
+
+header .inner .gnbBtn { display: block; /* a 태그 = inline 요소,  */ float: left; /* block 속성 -> 한줄 꽉 채우기 때문에 block 속성 제거해서 왼쪽으로 달라 붙을 수 있게 */ width: 32px; height: 12px; position: relative; /* 자기 자신 기준 배치 */ margin-top: 15px; transition: all 0.3s; z-index: 200; }
+
+header .inner .gnbBtn span { background: #333; width: 32px; height: 3px; display: block; position: absolute; left: 0; }
+
+header .inner .gnbBtn span.a { top: 0; }
+
+header .inner .gnbBtn span.b { bottom: 0; }
+
+header .inner .contact { display: block; float: right; /* 오른쪽에 위치 시킴 */ margin-top: 10px; transition: all 0.3s; }
+
+header.on { /* 모션 */ padding: 20px 0 18px; transition: all 0.3s; }
+
+header.on .logo { font-size: 22px; transition: all 0.3s; }
+
+header.on .gnbBtn, header.on .contact { margin-top: 4px; transition: all 0.3s; }
+
+header.on nav.gnb { width: 300px; transition: all 0.3s; }
+
+header.on nav.gnb ul { width: 50%; }
+
+/* nav */
+nav.gnb { position: absolute; /* 부모요소인 header 'position:fixed' 기준 */ left: -1000px; /* 메뉴바 숨기기 위해 왼쪽 밖으로 보냄 */ top: 0; background: #000; color: #fff; width: 400px; height: 100vh; padding: 95px 50px; box-sizing: border-box; /* 지정해준 너비값 안에 padding 포함되도록 */ text-align: left; transition: all 0.7s; /* 열릴때 부드럽게 */ overflow: hidden; /* 넘치는 부분 감싸 */ }
+
+nav.gnb ul { position: absolute; width: 60%; left: 50%; top: 50%; padding: 20px 0; transform: translate(-50%, -50%); /* 중앙으로 오도록 */ border-top: 1px solid #555; border-bottom: 1px solid #555; }
+
+nav.gnb ul li a { text-align: left; line-height: 50px; font-size: 22px; }
+
+nav.gnb ul li a span { text-transform: none; /* uppercase 되어있기 때문에 */ font-family: "Nanum Myeongjo", serif; font-style: italic; font-size: 20px; }
+
+nav.gnb.on { width: 400px; left: 0; }
+
+/* 반응형 웹 */
+@media screen and (max-width: 500px) { header { padding: 20px 0 18px; } header .inner .gnbBtn, header.on .inner .gnbBtn { width: 22px; margin-top: 5px; } header .inner .logo, header.on .inner .logo { font-size: 18px; } header .inner .contact { display: none; } nav.gnb.on, header.on nav.gnb { width: 100%; padding: 0; } nav.gnb ul, header.on nav.gnb ul { width: 50%; } }
+
+/* main 공통 부분 scss */
+/* main container */
+.contents { background: #fff; position: relative; /* 자기 자신 기준 배치 */ z-index: 1; margin-bottom: 200px; /* footer 영역 'z-index: -1'이기 때문에 하단에 contents 영역에 가려서 보이지 않음. 맨 밑 하단에만 보일 수 있도록 하기 위함.*/ }
+
+.contents .visual { width: 100vw; height: 100vh; position: relative; /* 자기 자신 기준 배치 */ }
+
+.contents .visual .mainBg { position: absolute; /* 부모요소 기준 배치 */ left: 0; bottom: 0; width: 100vw; height: 88vh; object-fit: contain; /* object-fit: img나 video 등의 콘텐츠 크기 맞추는 방식 cover: 가로세로 비율 유지하면서 요소 콘텐츠 박스를 가득 채움. 가로세로비율 맞지 않는 경우 맞지 않는 부분은 잘림 */ background-color: #000000; }
+
+/* .inner => section 별 전체 레이아웃 넓이 */
+.inner { width: 1400px; margin: 0 auto; }
+
+.text .title { font-family: "Montserrat", sans-serif; font-size: 20px; font-weight: bold; letter-spacing: 1px; /* 자간 간격 */ text-transform: uppercase; /* 대문자 변환 */ }
+
+.text p { font-size: 35px; line-height: 1.2; /* 줄 간격 */ margin: 40px 0; }
+
+.text a { display: inline-block; /* a는 inline요소 */ padding: 5px 15px; border: 1px solid #333; border-radius: 20px; letter-spacing: 1px; /* 자간 간격 */ text-transform: uppercase; transition: all 0.2s; font-family: "Montserrat", sans-serif; font-size: 12px; font-weight: bold; }
+
+.text a:hover, .text a:focus { border: 1px solid transparent; /* transparent: 투명하게 처리 */ border-bottom: 1px solid #333; /* 아래 테두리만 남김 */ border-radius: 0; /* 테두리 끝 둥근 것 없앰 */ padding: 5px 18px; transition: all 0.2s; /* 모든 변화 부드럽게 처리 */ background: #f2f0eb; }
+
+.text.motion .word { animation: textAni 0.8s both; animation-delay: calc(0.02s * var(--word-index)); }
+
+.text.motion a { animation: border 1s both; }
+
+@keyframes textAni { 0% { opacity: 0; }
+  30% { opacity: 0; } }
+
+@keyframes border { 0% { border-color: transparent; }
+  60% { border-color: transparent; } }
+
+/* 반응형 웹 */
+@media screen and (max-width: 1400px) { .inner { width: 90%; } }
+
+@media screen and (max-width: 1024px) { .contents { margin-bottom: 330px; } .contents .visual .title { font-size: 50px; } }
+
+@media screen and (max-width: 500px) { .contents { margin-bottom: 280px; } .contents .visual .title { font-size: 32px; } .text p { font-size: 22px; } }
+
+section.introduce { padding: 100px 0; }
+
+section.introduce .inner { /* 자식요소(img/text)에 float 줄 경우 부모요소(inner)에 overflow:hidden으로 높이값을 줘야함 */ overflow: hidden; }
+
+section.introduce .img { width: 48%; height: 80vh; float: left; border-radius: 10px; overflow: hidden; }
+
+section.introduce .img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 25%; }
+
+section.introduce .img.motion { animation-name: introduce; animation-duration: 0.8s; }
+
+section.introduce .text { width: 45%; float: right; }
+
+@keyframes introduce { 0% { opacity: 0;
+    transform: translateX(-10px); }
+  20% { /* 0%~20%까지 위치 유지*/
+    opacity: 0;
+    transform: translateX(-10px); } }
+
+/* 반응형 웹 */
+@media screen and (max-width: 768px) { section.introduce .inner { display: flex; flex-wrap: wrap; flex-direction: column-reverse; } section.introduce .img { width: 100%; } section.introduce .text { width: 100%; margin-bottom: 50px; } }
+
+section.about { background: #f2f0eb; padding: 100px; }
+
+section.about .inner { display: flex; overflow: hidden; }
+
+section.about .text { width: 45%; }
+
+section.about .text div { margin: 40px 0; font-size: 18px; font-weight: 500; }
+
+section.about .text p { font-size: 24px; margin-bottom: 20px; }
+
+section.about .img { width: 48%; height: 58vh; border-radius: 10px; overflow: hidden; }
+
+section.about .img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 0; }
+
+/* 반응형 웸 */
+@media screen and (max-width: 1024px) { section.about .inner .text p, .text p { font-size: 28px; } }
+
+@media screen and (max-width: 500px) { section.about { padding: 80px 0; } section.about .inner .text p { font-size: 22px; } }
+
+section.synopsis { padding: 100px 0; }
+
+section.synopsis .inner { position: relative; /* 자기 자신 기준 배치 */ }
+
+section.synopsis .inner .list { width: 48%; }
+
+section.synopsis .inner .list li { margin-bottom: 30px; }
+
+section.synopsis .inner .list li:last-child { margin-bottom: 0; }
+
+section.synopsis .inner .list li a { position: relative; display: block; width: 100%; height: 100%; border-radius: 10px; overflow: hidden; /* border-radius 밖으로 넘치는 이미지 숨김처리 */ }
+
+section.synopsis .inner .list li a span { display: none; }
+
+section.synopsis .inner .list li a img { width: 100%; }
+
+section.synopsis .inner .list li a.on:after, section.synopsis .inner .list li a:hover:after { content: ""; width: 100%; height: 100%; position: absolute; left: 0; top: 0; background: rgba(41, 41, 41, 0.3); }
+
+section.synopsis .inner .list li a.on span, section.synopsis .inner .list li a:hover span { position: absolute; display: block; z-index: 1; width: 100%; left: 0; top: 50%; transform: translateY(-50%); text-align: center; color: #fff; font-size: 20px; font-style: italic; }
+
+section.synopsis .inner .list li a.on span b, section.synopsis .inner .list li a:hover span b { font-family: "Montserrat", sans-serif; }
+
+section.synopsis .inner .fix { position: absolute; /* 부모요소 기준 배치 */ width: 45%; height: 100%; top: 0; right: 0; }
+
+section.synopsis .inner .fix .text { position: absolute; /* 부모요소 기준 배치 */ bottom: 10%; margin-top: 100px; }
+
+section.synopsis .inner .fix .text p { font-size: 20px; line-height: 1.2; /* 줄 간격 */ }
+
+section.synopsis .inner .fix .text.on { position: fixed; bottom: 50%; /* inner 기준(자기자신기준) [fix/text-> 부모(조상)요소기준] 영역 밑에서 50%에 위치하게 둠 */ transform: translateY(50%); /* text 영역의 반만큼 다시 올려야 진짜 가운데 위치 */ }
+
+/* 반응형 웹 */
+@media screen and (max-width: 1024px) { section.synopsis .inner { display: flex; flex-wrap: wrap; flex-direction: column-reverse; /* 이미지보다 글씨가 먼저 오도록 순서바꿈 */ } section.synopsis .inner .list { width: 100%; display: flex; flex-wrap: wrap; justify-content: space-between; } section.synopsis .inner .list li { width: 48.5%; margin-bottom: 20px; } section.synopsis .inner .list li:last-child { margin-bottom: 20px; } section.synopsis .inner .list li a { /* on클래스가 붙거나 hover하거나 on클래스가 붙지않아도! 이미지 위에 흰 글씨 보이게 */ } section.synopsis .inner .list li a.on:after, section.synopsis .inner .list li a:hover:after { display: none; /* hover 효과 삭제 */ } section.synopsis .inner .list li a.on span, section.synopsis .inner .list li a:hover span, section.synopsis .inner .list li a span { position: absolute; display: block; z-index: 1; width: 100%; left: 0; top: 50%; transform: translateY(-50%); text-align: center; color: #fff; font-size: 25px; font-style: italic; /* on클래스가 붙거나 hover하거나 on클래스 붙지 않아도 보이게 */ } section.synopsis .inner .list li a.on span b, section.synopsis .inner .list li a:hover span b, section.synopsis .inner .list li a span b { font-family: "Montserrat", sans-serif; font-style: normal; } section.synopsis .inner .fix { /* position 기본값으로 초기화 */ position: static; width: 100%; margin-bottom: 50px; } section.synopsis .inner .fix .text { position: static; } section.synopsis .inner .fix .text.on { position: static; transform: none; } }
+
+@media screen and (max-width: 500px) { section.synopsis { padding: 80px 0; } section.synopsis .inner .list li { width: 100%; } }
+
+section.sectors { background: #f2f0eb; padding: 100px 0 230px; position: relative; margin-bottom: 260px; }
+
+section.sectors .list { display: flex; justify-content: space-between; position: absolute; width: 1400px; left: 50%; transform: translateX(-50%); bottom: -160px; }
+
+section.sectors .list li { width: 31%; border-radius: 10px; overflow: hidden; }
+
+section.sectors .list li a { display: block; position: relative; /* 부모요소 기준 배치 */ }
+
+section.sectors .list li a img { width: 100%; transition: all 0.3s; /* hover 나갈 때도 부드럽게 표현되기 위함  */ }
+
+section.sectors .list li a h3 { position: absolute; /* 부모요소 기준 배치 */ left: 50%; top: 50%; color: #fff; transform: translate(-50%, -50%); font-size: 25px; font-family: "Montserrat", sans-serif; text-transform: uppercase; letter-spacing: 1px; /* 자간 간격 */ transition: all 0.3s; /* hover 나갈 때도 부드럽게 표현되기 위함  */ }
+
+section.sectors .list li a:hover img, section.sectors .list li a:focus img { transform: scale(1.2); transition: all 1s; }
+
+section.sectors .list li a:hover h3, section.sectors .list li a:focus h3 { letter-spacing: 4px; transition: all 0.5s; }
+
+section.sectors .list.motion li { animation-name: sectors; animation-duration: 1s; }
+
+section.sectors .list.motion li:nth-child(2) { animation-duration: 1.15s; }
+
+section.sectors .list.motion li:nth-child(3) { animation-duration: 1.3s; }
+
+@keyframes sectors { 0% { opacity: 0;
+    transform: translateX(1000px); }
+  30% { opacity: 0;
+    transform: translateX(1000px); }
+  /* 100%일때는 따로 지정하지 않아도 알아서 자기 자리로 옴 */ }
+
+/* 반응형 웹 */
+@media screen and (max-width: 1400px) { section.sectors .list { width: 90%; } }
+
+@media screen and (max-width: 1024px) { section.sectors { padding: 100px 0 20%; margin-bottom: 15%; } section.sectors .list { bottom: -18%; } }
+
+@media screen and (max-width: 500px) { section.sectors { padding: 80px 0 85%; margin-bottom: 120%; } section.sectors .list { flex-wrap: wrap; bottom: -82%; } section.sectors .list li { width: 100%; margin-bottom: 15px; } }
+
+section.journal { background: #f2f0eb; padding: 350px 0 200px; margin-top: -250px; /* 위의 section img와 겹쳐지게 올림 */ font-family: "Montserrat", sans-serif; }
+
+section.journal h2 { font-size: 30px; letter-spacing: 1px; text-transform: uppercase; text-align: center; margin-bottom: 100px; }
+
+section.journal .list { display: flex; /* 가로축으로 나란히 정렬 */ justify-content: space-between; /* 가로축 균등하게 나눠서 배치 */ }
+
+section.journal .list li { width: 330px; }
+
+section.journal .list li a { display: block; }
+
+section.journal .list li a .img { border-radius: 10px; overflow: hidden; /* 넘치는 부분 감싸 */ height: 330px; position: relative; }
+
+section.journal .list li a .img img { height: 100%; /* 높이 img 클래스 가득차도록 */ width: auto; /* 높이 기준으로 잡았기 때문에 auto로 알아서 맞추도록 */ position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+section.journal .list li a h3 { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+section.journal .list li a p { margin: 30px 0; font-size: 16px; line-height: 1.4; overflow: hidden; /* css 모든 브라우저에 호환되는 것X 여기선 google, safari에 적용되는 -webkit- 이용 */ /* display:box; block에 float 대신 사용. 수직,수평 배치 or 역순 배열,임의로 배치순서 바꿔 줄 수도 있음. */ display: -webkit-box; /* 상자 가로 정렬 */ -webkit-line-clamp: 3; /* ... 말 줄임 생략 표시 3번째 줄에 표시되도록 */ -webkit-box-orient: vertical; /* 박스 수직 방향 배치 */ text-align: justify; /* 이 영역안에서 text 양쪽정렬 */ }
+
+section.journal .list.motion li { animation-name: journal; animation-duration: 0.5s; }
+
+section.journal .list.motion:nth-child(2) { animation-duration: 0.6s; }
+
+section.journal .list.motion:nth-child(3) { animation-duration: 0.7s; }
+
+section.journal .list.motion:nth-child(4) { animation-duration: 0.8s; }
+
+@keyframes journal { 0% { opacity: 0;
+    transform: translateY(200px); }
+  30% { opacity: 0;
+    transform: translateY(200px); } }
+
+/* 반응형 웹 */
+@media screen and (max-width: 1400px) { section.journal .list li { width: 220px; } section.journal .list li a .img { height: 220px; } }
+
+@media screen and (max-width: 1024px) { section.journal { padding: 25% 0 100px; } }
+
+@media screen and (max-width: 768px) { section.journal { padding: 30% 0 100px; } section.journal .list { flex-wrap: wrap; } section.journal .list li { width: 48.5%; margin-bottom: 20px; } section.journal .list li a .img { height: auto; } section.journal .list li a .img img { width: 100%; height: auto; position: static; transform: none; } }
+
+@media screen and (max-width: 500px) { section.journal { padding: 60% 0 80px; } section.journal h2 { font-size: 25px; } section.journal .list li { width: 100%; } section.journal .list li:nth-child(2) ~ * { display: none; } }
+
+footer { position: fixed; left: 0; bottom: 0; width: 100%; height: 200px; background: #5d4037; color: #fff; padding: 75px 0; box-sizing: border-box; /* padding 값 줄 때 전체영역 box-sizing: border-box주기 */ z-index: -1; }
+
+footer .inner { display: flex; justify-content: space-between; font-family: "Montserrat", sans-serif; }
+
+footer .inner .footerLogo { font-size: 50px; text-transform: uppercase; font-weight: bold; }
+
+footer .inner .contact { width: 30%; line-height: 1.4; margin-top: 10px; }
+
+footer .inner .sns { display: flex; margin-top: 20px; }
+
+footer .inner .sns li { margin: 0 40px; font-weight: bold; font-size: 17px; }
+
+/* 반응형 웹 */
+@media screen and (max-width: 1024px) { footer { height: 330px; } footer .inner { flex-wrap: wrap; } footer .inner .footerLogo { width: 100%; } footer .inner .contact { width: 100%; margin: 20px 0; } footer .inner .sns { width: 100%; justify-content: space-between; } footer .inner .sns li { margin: 0; } }
+
+@media screen and (max-width: 500px) { footer { height: 280px; padding: 50px 0; } footer .inner .footerLogo { font-size: 35px; text-align: center; } footer .inner .sns li { font-size: 13px; } }
+
+/* reset */
+* { padding: 0; margin: 0; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+img { vertical-align: middle; }
+
+a img { border: none; }
+
+li { list-style: none; }
+
+address, em, i { font-style: normal; }
+
+body { font-family: "Nanum Myeongjo", serif; font-size: 14px; color: #333; }
+
+.wrap { width: 100%; overflow: hidden; }
+
+/*# sourceMappingURL=main1.css.map */

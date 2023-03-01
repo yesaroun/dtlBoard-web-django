@@ -1,0 +1,145 @@
+section.synopsis {
+  padding: 100px 0;
+  .inner {
+    position: relative; /* 자기 자신 기준 배치 */
+    .list {
+      width: 48%;
+      li {
+        margin-bottom: 30px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        a {
+          position: relative;
+          display: block;
+          width: 100%;
+          height: 100%;
+          border-radius: 10px;
+          overflow: hidden; /* border-radius 밖으로 넘치는 이미지 숨김처리 */
+          span {
+            display: none;
+          }
+          img {
+            width: 100%;
+          }
+          &.on:after, &:hover:after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba(41, 41, 41, 0.3);
+          }
+          &.on span, &:hover span {
+            position: absolute;
+            display: block;
+            z-index: 1;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: #fff;
+            font: {
+              size: 20px;
+              style: italic;
+            }
+            b {
+              font-family: "Montserrat", sans-serif;
+            }
+          }
+        }
+      }
+    }
+    .fix {
+      position: absolute; /* 부모요소 기준 배치 */
+      width: 45%;
+      height: 100%;
+      top: 0;
+      right: 0;
+      .text {
+        position: absolute; /* 부모요소 기준 배치 */
+        bottom: 10%;
+        margin-top: 100px;
+        p {
+          font-size: 20px;
+          line-height: 1.2; /* 줄 간격 */
+        }
+        &.on {
+          position: fixed;
+          bottom: 50%; /* inner 기준(자기자신기준) [fix/text-> 부모(조상)요소기준] 영역 밑에서 50%에 위치하게 둠 */
+          transform: translateY(50%); /* text 영역의 반만큼 다시 올려야 진짜 가운데 위치 */
+        }
+      }
+    }
+  }
+}
+
+/* 반응형 웹 */
+
+@media screen and (max-width: 1024px) {
+  section.synopsis .inner {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse; /* 이미지보다 글씨가 먼저 오도록 순서바꿈 */
+    .list {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        width: 48.5%;
+        margin-bottom: 20px;
+        &:last-child {
+          margin-bottom: 20px;
+        }
+        a {
+          &.on:after, &:hover:after {
+            display: none; /* hover 효과 삭제 */
+          }
+          /* on클래스가 붙거나 hover하거나 on클래스가 붙지않아도! 이미지 위에 흰 글씨 보이게 */
+          &.on span, &:hover span, span {
+            position: absolute;
+            display: block;
+            z-index: 1;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+            color: #fff;
+            font-size: 25px;
+            font-style: italic;
+            /* on클래스가 붙거나 hover하거나 on클래스 붙지 않아도 보이게 */
+            b {
+              font-family: "Montserrat", sans-serif;
+              font-style: normal;
+            }
+          }
+        }
+      }
+    }
+    .fix {  /* position 기본값으로 초기화 */
+      position: static;
+      width: 100%;
+      margin-bottom: 50px;
+      .text {
+        position: static;
+        &.on {
+          position: static;
+          transform: none;
+        }
+      }
+    }
+  } 
+}
+
+@media screen and (max-width: 500px) {
+  section.synopsis {
+    padding: 80px 0;
+    .inner .list li {
+      width: 100%;
+    }
+  }
+}
