@@ -353,23 +353,23 @@ section.about .inner .text p {
   margin-bottom: 20px;
 }
 
-/* section.approach */
-section.approach {
+/* section.synopsis  */
+section.synopsis {
   padding: 100px 0;
 }
-section.approach .inner {
+section.synopsis .inner {
   position: relative; /* 자기 자신 기준 배치 */
 }
-section.approach .inner .list {
+section.synopsis .inner .list {
   width: 48%;
 }
-section.approach .inner .list li {
+section.synopsis .inner .list li {
   margin-bottom: 30px;
 }
-section.approach .inner .list li:last-child {
+section.synopsis .inner .list li:last-child {
   margin-bottom: 0;
 }
-section.approach .inner .list li a {
+section.synopsis .inner .list li a {
   position: relative;
   display: block;
   width: 100%;
@@ -377,27 +377,34 @@ section.approach .inner .list li a {
   border-radius: 10px;
   overflow: hidden; /* border-radius 밖으로 넘치는 이미지는 숨김처리 */
 }
-section.approach .inner .list li a span {
+section.synopsis .inner .list li a span {
   display: none;
 }
-section.approach .inner .list li a img {
+section.synopsis .inner .list li a img {
   width: 100%;
 }
-section.approach .inner .fix {
+section.synopsis .inner .fix {
   position: absolute; /* 부모요소 기준 배치 */
   width: 45%;
   height: 100%;
   top: 0;
   right: 0;
 }
+section.synopsis .inner .fix .text {
+  margin-top: 100px;
+}
+section.synopsis .inner .fix .text p {
+  font-size: 20px;
+  line-height: 1.2; /* 줄 간격 */
+}
 
-/* section.approach 모션 */
+/* section.synopsis 모션 */
 
-section.approach .inner .fix .text {
+section.synopsis .inner .fix .text {
   position: absolute; /* 부모요소 기준 배치 */
   bottom: 10%;
 }
-section.approach .inner .fix .text.on {
+section.synopsis .inner .fix .text.on {
   position: fixed;
   bottom: 50%; /* inner 기준(자기자신기준) [fix/text-> 부모(조상)요소기준] 영역 밑에서 50%에 위치하게 둠 */
   transform: translateY(
@@ -405,8 +412,8 @@ section.approach .inner .fix .text.on {
   ); /* text 영역의 반만큼 다시 올려야 진짜 가운데 위치 */
 }
 /* 스크롤 내려서 on클래스 붙었을 때 + hover 했을 때 모두 적용 */
-section.approach .inner .list li a.on:after,
-section.approach .inner .list li a:hover:after {
+section.synopsis .inner .list li a.on:after,
+section.synopsis .inner .list li a:hover:after {
   content: "";
   width: 100%;
   height: 100%;
@@ -415,8 +422,8 @@ section.approach .inner .list li a:hover:after {
   top: 0;
   background: rgba(41, 41, 41, 0.3);
 }
-section.approach .inner .list li a.on span,
-section.approach .inner .list li a:hover span {
+section.synopsis .inner .list li a.on span,
+section.synopsis .inner .list li a:hover span {
   position: absolute;
   display: block;
   z-index: 1;
@@ -426,13 +433,12 @@ section.approach .inner .list li a:hover span {
   transform: translateY(-50%);
   text-align: center;
   color: #fff;
-  font-size: 35px;
+  font-size: 20px;
   font-style: italic;
 }
-section.approach .inner .list li a.on span b,
-section.approach .inner .list li a:hover span b {
+section.synopsis .inner .list li a.on span b,
+section.synopsis .inner .list li a:hover span b {
   font-family: "Montserrat", sans-serif;
-  font-style: normal;
 }
 
 /* section.sectors */
@@ -680,46 +686,46 @@ footer .inner .sns li {
   .text p {
     font-size: 28px;
   }
-  section.approach .inner .list {
+  section.synopsis .inner .list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  section.approach .inner .list li {
+  section.synopsis .inner .list li {
     width: 48.5%;
     margin-bottom: 20px;
   }
-  section.approach .inner .list li:last-child {
+  section.synopsis .inner .list li:last-child {
     margin-bottom: 20px;
   }
   /* position 기본값으로 초기화 */
-  section.approach .inner .fix {
+  section.synopsis .inner .fix {
     position: static;
     width: 100%;
     margin-bottom: 50px;
   }
-  section.approach .inner .fix .text {
+  section.synopsis .inner .fix .text {
     position: static;
   }
-  section.approach .inner .fix .text.on {
+  section.synopsis .inner .fix .text.on {
     position: static;
     transform: none;
   }
-  section.approach .inner {
+  section.synopsis .inner {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column-reverse; /* 이미지보다 글씨가 먼저 오도록 순서바꿈 */
   }
-  section.approach .inner .list li a.on:after,
-  section.approach .inner .list li a:hover:after {
+  section.synopsis .inner .list li a.on:after,
+  section.synopsis .inner .list li a:hover:after {
     display: none; /* hover 효과 삭제 */
   }
 
   /* on클래스가 붙거나 hover하거나 on클래스가 붙지않아도! 이미지 위에 흰 글씨 보이게 */
-  section.approach .inner .list li a.on span,
-  section.approach .inner .list li a:hover span,
-  section.approach .inner .list li a span {
+  section.synopsis .inner .list li a.on span,
+  section.synopsis .inner .list li a:hover span,
+  section.synopsis .inner .list li a span {
     position: absolute;
     display: block;
     z-index: 1;
@@ -733,9 +739,9 @@ footer .inner .sns li {
     font-style: italic;
   }
   /* on클래스가 붙거나 hover하거나 on클래스 붙지 않아도 보이게*/
-  section.approach .inner .list li a.on span b,
-  section.approach .inner .list li a:hover span b,
-  section.approach .inner .list li a span b {
+  section.synopsis .inner .list li a.on span b,
+  section.synopsis .inner .list li a:hover span b,
+  section.synopsis .inner .list li a span b {
     font-family: "Montserrat", sans-serif;
     font-style: normal;
   }
@@ -819,7 +825,7 @@ footer .inner .sns li {
   header.on .inner .logo {
     font-size: 18px;
   }
-  header .ineer .contact {
+  header .inner .contact {
     display: none;
   }
   nav.gnb.on,
@@ -839,10 +845,10 @@ footer .inner .sns li {
     font-size: 22px;
   }
   section.about,
-  section.approach {
+  section.synopsis {
     padding: 80px 0;
   }
-  section.approach .inner .list li {
+  section.synopsis .inner .list li {
     width: 100%;
   }
   section.sectors {

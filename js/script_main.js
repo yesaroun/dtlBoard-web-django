@@ -8,7 +8,7 @@ $(document).on("click", 'a[href="#"]', function (e) {
   e.preventDefault();
 });
 
-// 1. approach 영역
+// 1. synopsis 영역
 
 // $:이벤트 불러오는 메소드 window 메소드 불러옴 에 on(이벤트)!
 // scroll 사이즈 resize 할 때 다음의 함수 실행
@@ -44,29 +44,29 @@ $(window).on("scroll resize", function () {
   }
 
   function fixList() {
-    $("section.approach .inner .list li a").removeClass("on");
+    $("section.synopsis .inner .list li a").removeClass("on");
     if (scrollPos > 2000) {
-      $("section.approach .inner .list li a").removeClass("on");
-      $("section.approach .inner .list li:eq(0) a").addClass("on");
+      $("section.synopsis .inner .list li a").removeClass("on");
+      $("section.synopsis .inner .list li:eq(0) a").addClass("on");
       // scrollPos > 2000 일때, .list li a 에 붙은 on클래스 제거 list의 0번째 인덱스에 on클래스 더함.
       // eq() : 인덱스 값 사용해서 원하는 위치의 요소 선택해서 가져올 수 있는 선택자 메소드
     }
     if (scrollPos > 2400) {
-      $("section.approach .inner .list li a").removeClass("on");
-      $("section.approach .inner .list li:eq(1) a").addClass("on");
+      $("section.synopsis .inner .list li a").removeClass("on");
+      $("section.synopsis .inner .list li:eq(1) a").addClass("on");
     }
     // scrollPos > 2400 일때, .list li a 에 붙은 다른 on클래스 제거 list의 1번째 인덱스에 on클래스 더함.
 
     if (scrollPos > 2800) {
-      $("section.approach .inner .list li a").removeClass("on");
-      $("section.approach .inner .list li:eq(2) a").addClass("on");
+      $("section.synopsis .inner .list li a").removeClass("on");
+      $("section.synopsis .inner .list li:eq(2) a").addClass("on");
     }
     if (scrollPos > 3200) {
-      $("section.approach .inner .list li a").removeClass("on");
-      $("section.approach .inner .list li:eq(3) a").addClass("on");
+      $("section.synopsis .inner .list li a").removeClass("on");
+      $("section.synopsis .inner .list li:eq(3) a").addClass("on");
     }
     if (scrollPos > 3700) {
-      $("section.approach .inner .list li a").removeClass("on");
+      $("section.synopsis .inner .list li a").removeClass("on");
     }
   }
 
